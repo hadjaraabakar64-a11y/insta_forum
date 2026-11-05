@@ -1,0 +1,74 @@
+.galerie { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; margin: 4px 0; }
+.galerie.is-unique { grid-template-columns: minmax(0, 320px); }
+.galerie__vignette {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #dde6f3;
+  border-radius: 12px;
+  background: #f1f4f9;
+  cursor: zoom-in;
+}
+.galerie__vignette img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.2s; }
+.galerie__vignette:hover img { transform: scale(1.04); }
+.galerie__vignette:focus-visible { outline: 3px solid rgba(23, 102, 240, 0.4); outline-offset: 2px; }
+.galerie__loupe {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(15, 42, 92, 0.7);
+  color: #fff;
+  font-size: 0.875rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.galerie__vignette:hover .galerie__loupe,
+.galerie__vignette:focus-visible .galerie__loupe { opacity: 1; }
+
+.visionneuse {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 72px;
+  background: rgba(8, 15, 30, 0.92);
+}
+.visionneuse__image { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 100%; max-height: 100%; margin: 0; }
+.visionneuse__image img { display: block; max-width: 100%; max-height: calc(100vh - 150px); border-radius: 10px; object-fit: contain; }
+.visionneuse__image figcaption { display: flex; align-items: center; gap: 16px; color: #c9d4e6; font-size: 0.875rem; }
+.visionneuse__image figcaption span { color: #fff; font-weight: 700; }
+.visionneuse__image a { color: #8fb8ff; }
+.visionneuse button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+}
+.visionneuse button:hover { background: rgba(255, 255, 255, 0.24); }
+.visionneuse button:focus-visible { outline: 3px solid #8fb8ff; }
+.visionneuse__fermer { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; font-size: 1.125rem; }
+.visionneuse__fleche { position: absolute; top: 50%; width: 52px; height: 52px; font-size: 2rem; line-height: 1; transform: translateY(-50%); }
+.visionneuse__fleche.is-gauche { left: 16px; }
+.visionneuse__fleche.is-droite { right: 16px; }
+
+@media (max-width: 760px) {
+  .galerie { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+  .galerie.is-unique { grid-template-columns: minmax(0, 1fr); }
+  .visionneuse { padding: 64px 8px 72px; }
+  .visionneuse__fleche { top: auto; bottom: 16px; transform: none; width: 46px; height: 46px; }
+  .visionneuse__fleche.is-gauche { left: calc(50% - 56px); }
+  .visionneuse__fleche.is-droite { right: calc(50% - 56px); }
+}

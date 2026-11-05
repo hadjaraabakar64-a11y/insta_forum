@@ -1,0 +1,48 @@
+.admin__logo { color: var(--h-ink); font-size: 1.5rem; font-weight: 800; }
+.admin__logo b { color: var(--h-blue); }
+.admin__main { display: flex; flex-direction: column; gap: 20px; max-width: 1280px; margin: 0 auto; padding: 32px 24px 56px; }
+.admin__intro { padding: 8px 0; }
+.admin__eyebrow { color: var(--h-blue); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.admin__intro h1 { margin: 6px 0; color: var(--h-ink); font-size: 2rem; }
+.admin__intro p { margin: 0; color: var(--h-gray); }
+.admin__retour { padding: 10px 14px; border: 1px solid var(--h-line); border-radius: 10px; background: #fff; color: var(--h-text); font: inherit; font-weight: 600; cursor: pointer; }
+.admin__retour:hover { border-color: #b8cdee; color: var(--h-blue); }
+.admin__stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.admin__stat { display: flex; flex-direction: column; gap: 4px; padding: 16px; }
+.admin__stat strong { color: var(--h-ink); font-size: 1.5rem; }
+.admin__stat span { color: var(--h-gray); font-size: 0.875rem; }
+.admin__tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin__tabs button { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid var(--h-line); border-radius: 999px; background: #fff; color: var(--h-text); font: inherit; font-weight: 600; cursor: pointer; }
+.admin__tabs button.is-active { border-color: var(--h-blue); background: var(--h-blue); color: #fff; }
+.admin__tabs button span { opacity: 0.75; }
+.admin__panel { display: flex; flex-direction: column; gap: 14px; padding: 22px; }
+.admin__panel h2 { margin: 0; color: var(--h-ink); font-size: 1.25rem; }
+.admin__liste { display: flex; flex-direction: column; }
+.admin__ligne { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid var(--h-line); }
+.admin__texte { display: flex; flex: 1; flex-direction: column; gap: 5px; min-width: 0; overflow-wrap: anywhere; }
+.admin__texte strong { color: var(--h-ink); }
+.admin__texte > span { color: var(--h-gray); font-size: 0.875rem; }
+.admin__actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; }
+.admin__actions button, .admin__form button, .admin__message button { padding: 8px 12px; border: 1px solid var(--h-line); border-radius: 8px; background: #fff; color: var(--h-text); font: inherit; font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+.admin__actions button:hover, .admin__form button:hover, .admin__message button:hover { border-color: #b8cdee; color: var(--h-blue); }
+.admin__actions button:disabled, .admin__form button:disabled { opacity: 0.55; cursor: not-allowed; }
+.admin__badge { padding: 5px 9px; border-radius: 999px; background: #f1f4f9; color: var(--h-gray); font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+.admin__badge.is-actif { background: #e3f6ec; color: #11804c; }
+.admin__actions .admin__danger { border-color: #f3c1be; color: #b42318; }
+.admin__actions .admin__danger:hover:not(:disabled) { border-color: #e5484d; background: #fff5f4; color: #b42318; }
+.admin__form { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin__form input { flex: 1; min-width: 200px; padding: 10px 12px; border: 1px solid var(--h-line); border-radius: 8px; font: inherit; }
+.admin__form input:focus { outline: 2px solid rgba(23, 102, 240, 0.18); border-color: var(--h-blue); }
+.admin__form .admin__primary { border-color: var(--h-blue); background: var(--h-blue); color: #fff; }
+.admin__form .admin__primary:hover:not(:disabled) { border-color: #0f52cc; background: #0f52cc; color: #fff; }
+.admin__message { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 24px; color: var(--h-gray); }
+
+@media (max-width: 760px) {
+  .admin__main { padding: 22px 16px 40px; }
+  .admin__intro h1 { font-size: 1.6rem; }
+  .admin__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin__ligne { align-items: flex-start; }
+  .admin__actions { flex-direction: column; align-items: flex-end; }
+  .admin__logo { font-size: 1.2rem; }
+  .admin__retour { padding: 8px 10px; font-size: 0.8rem; }
+}

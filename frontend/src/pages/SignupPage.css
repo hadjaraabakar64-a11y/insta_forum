@@ -1,0 +1,137 @@
+.login__form--signup h2 { font-size: 2.25rem; margin-bottom: 8px; }
+.login__form--signup .login__lead { margin-bottom: 20px; font-size: 1rem; }
+
+.signup__section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.signup__section::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+.row { display: flex; gap: 16px; }
+
+.field-wrap {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.field-wrap .field { height: 54px; margin-bottom: 0; }
+
+.field--error { border-color: #e5484d; background: #fffafa; }
+.field--error:focus-within {
+  border-color: #e5484d;
+  box-shadow: 0 0 0 3px rgba(229, 72, 77, 0.18);
+}
+.field__error {
+  margin: 6px 4px 0;
+  font-size: 0.8125rem;
+  color: #b42318;
+}
+
+.signup__matricule-hint {
+  margin: -8px 4px 16px;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+.field select {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.field select.is-empty { color: var(--placeholder); }
+.field select:disabled { cursor: not-allowed; opacity: 0.65; }
+.field select option { color: var(--ink); }
+
+.terms-wrap { margin: 4px 0 22px; text-align: left; }
+.check--top { align-items: flex-start; font-size: 0.875rem; line-height: 1.5; }
+.check--top input { flex: none; margin-top: 1px; }
+.check--top a { color: var(--blue-600); text-decoration: none; }
+.check--top a:hover { text-decoration: underline; }
+
+.signup__terms-copy { margin: 0 0 4px; font-size: 0.875rem; line-height: 1.5; }
+.signup__terms-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--blue-600);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.signup__terms-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.64);
+}
+.signup__terms-dialog {
+  width: min(100%, 640px);
+  max-height: min(90vh, 760px);
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  text-align: left;
+}
+.signup__terms-dialog h2 { margin: 0 0 8px; font-size: 1.5rem; }
+.signup__terms-dialog > p { margin: 0 0 16px; color: var(--muted); line-height: 1.5; }
+.signup__terms-list { display: grid; gap: 12px; margin: 0; padding-left: 22px; line-height: 1.55; }
+.signup__terms-list li { padding-left: 4px; }
+.signup__terms-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.signup__terms-actions .btn { min-height: 44px; padding: 0 20px; }
+.signup__terms-refuse { border: 1px solid var(--border); background: #fff; color: var(--ink); }
+.signup__terms-refuse:hover { background: #f5f7fa; }
+
+.btn--signup { height: 58px; font-size: 1.0625rem; }
+
+.solidite { display: flex; flex-direction: column; gap: 6px; margin: -8px 0 16px; text-align: left; }
+.solidite__barres { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.solidite__barres span { height: 5px; border-radius: 999px; background: var(--border); transition: background 0.2s; }
+.solidite small { color: var(--muted); font-size: 0.8125rem; }
+.solidite.is-faible .is-pleine { background: #e5484d; }
+.solidite.is-faible strong { color: #b42318; }
+.solidite.is-moyen .is-pleine { background: #f59e0b; }
+.solidite.is-moyen strong { color: #b45309; }
+.solidite.is-bon .is-pleine { background: #1766f0; }
+.solidite.is-bon strong { color: #0f52cc; }
+.solidite.is-excellent .is-pleine { background: #16955a; }
+.solidite.is-excellent strong { color: #11804c; }
+
+.signup__switch {
+  margin: 20px 0 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+.signup__switch .link { font-weight: 600; }
+
+@media (max-width: 560px) {
+  .row { flex-direction: column; gap: 0; }
+  .signup__terms-dialog { padding: 22px; }
+  .signup__terms-actions { flex-direction: column-reverse; }
+  .signup__terms-actions .btn { width: 100%; }
+}

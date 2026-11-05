@@ -1,0 +1,2 @@
+Placez ici la photo du bâtiment INSTA sous le nom : insta-building.jpg
+(sans photo, un dégradé bleu s'affiche à la place)
